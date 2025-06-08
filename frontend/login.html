@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Chatbot - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #e0e7ff 0%, #f3f4f6 60%, #c7d2fe 100%);
+      min-height: 100vh;
+    }
+    .glass {
+      background: rgba(255,255,255,0.82);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+      backdrop-filter: blur(18px);
+      border-radius: 2rem;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .fade-in {
+      animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-md px-4">
+    <div class="glass fade-in p-8 shadow-2xl">
+      <!-- Logo/Brand -->
+      <div class="flex flex-col items-center mb-8">
+        <div class="w-16 h-16 bg-gradient-to-tr from-indigo-400 to-blue-400 rounded-full flex items-center justify-center shadow-lg mb-2">
+          <i class="fas fa-robot text-white text-3xl"></i>
+        </div>
+        <h1 class="text-3xl font-extrabold text-gray-800 mb-1 tracking-tight">Welcome Back</h1>
+        <p class="text-gray-500 text-base">Sign in to your account</p>
+      </div>
+      <!-- Login Form -->
+      <div id="auth-container">
+        <form id="login-form" class="space-y-6">
+          <div>
+            <label for="login-username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+            <div class="relative">
+              <span class="absolute left-3 top-2.5 text-blue-300"><i class="fas fa-user"></i></span>
+              <input type="text" id="login-username" name="username" required
+                class="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent placeholder-gray-400 transition text-base">
+            </div>
+          </div>
+          <div>
+            <label for="login-password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+            <div class="relative">
+              <span class="absolute left-3 top-2.5 text-blue-300"><i class="fas fa-lock"></i></span>
+              <input type="password" id="login-password" name="password" required
+                class="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent placeholder-gray-400 transition text-base">
+            </div>
+          </div>
+          <button type="submit"
+            class="w-full bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-2.5 px-4 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 shadow-md transition text-lg">
+            Sign In
+          </button>
+        </form>
+        <div class="mt-6 text-center">
+          <p class="text-sm text-gray-600">
+            Don't have an account?
+            <button id="show-register" class="text-indigo-600 hover:text-indigo-800 font-semibold transition cursor-pointer">Sign up here</button>
+          </p>
+        </div>
+      </div>
+      <!-- Registration Form (Hidden by default) -->
+      <div id="register-container" class="hidden">
+        <form id="register-form" class="space-y-6">
+          <div>
+            <label for="register-username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+            <div class="relative">
+              <span class="absolute left-3 top-2.5 text-blue-300"><i class="fas fa-user"></i></span>
+              <input type="text" id="register-username" name="username" required
+                class="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent placeholder-gray-400 transition text-base">
+            </div>
+          </div>
+          <div>
+            <label for="register-email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+            <div class="relative">
+              <span class="absolute left-3 top-2.5 text-blue-300"><i class="fas fa-envelope"></i></span>
+              <input type="email" id="register-email" name="email" required
+                class="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent placeholder-gray-400 transition text-base">
+            </div>
+          </div>
+          <div>
+            <label for="register-password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+            <div class="relative">
+              <span class="absolute left-3 top-2.5 text-blue-300"><i class="fas fa-lock"></i></span>
+              <input type="password" id="register-password" name="password" required
+                class="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent placeholder-gray-400 transition text-base">
+            </div>
+          </div>
+          <button type="submit"
+            class="w-full bg-gradient-to-r from-green-400 to-blue-400 text-white py-2.5 px-4 rounded-lg font-semibold hover:from-blue-400 hover:to-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 shadow-md transition text-lg">
+            Create Account
+          </button>
+        </form>
+        <div class="mt-6 text-center">
+          <p class="text-sm text-gray-600">
+            Already have an account?
+            <button id="show-login" class="text-indigo-600 hover:text-indigo-800 font-semibold transition cursor-pointer">Sign in here</button>
+          </p>
+        </div>
+      </div>
+      <!-- Alert Messages -->
+      <div id="alert-container" class="mt-6 hidden">
+        <div id="alert-message" class="p-4 rounded-lg text-base"></div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Initialize login page
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeLoginPage();
+    });
+  </script>
+</body>
+</html>
